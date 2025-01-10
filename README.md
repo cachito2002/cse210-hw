@@ -1,5 +1,5 @@
 # cse210-student-template
-My name is Fernando Ferraez-Rincon
+My name is Fernando Ferraez-Rincon and this is going to be the beginning of a lit semester and wonderful beginnings!!!
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
