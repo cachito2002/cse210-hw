@@ -39,7 +39,7 @@ class Program
 
        if (x >= 70 )
        {
-            Console.WriteLine("You did amazing this semester, you passed the class! See you next time!!");
+            Console.WriteLine("You did amazing this semester, you passed the class! See you next time!!!");
        }
        else
        {
