@@ -6,34 +6,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        string response = "yes";
-        while (response == "yes")
 
-        {
-            Console.Write("Do you want to continue? ");
-            Console.ReadLine();
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        Random randomGenerator = new Random();
+        int number = randomGenerator.Next(1,11);
         // Console.WriteLine("Hello Sandbox World! bruh");
         // Console.WriteLine("What is up goody");
 
