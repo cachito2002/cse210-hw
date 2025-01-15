@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 
 class Program
 {
@@ -28,13 +29,18 @@ class Program
 // This is the Number Function
     static int AskNumber(string prompt)
     {
-        Console.Write(prompt);
-        string userInput = Console.ReadLine();
-        int userNumber = Convert.ToInt32(userInput);
-        return userNumber;
+        Console.Write("Please enter your favorite number: ");
+        int number = int.Parse(Console.ReadLine());
+        return number;
     }
 
 // This is the Solution Function
+
+    static int SquaredInteger(int number)
+    {
+        int square = number * number;
+        return square;
+    }
     static void EndResult(string name, int number)
     {
     int squared =  number * number;
