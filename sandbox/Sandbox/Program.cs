@@ -6,9 +6,43 @@ class Program
 {
     static void Main(string[] args)
     {
+        DisplayMessage();
+        string UserNamed = UserName();
+        int userNumber = UserNumber();
+        int squaredNumber = SquareNumber(userNumber);
 
-        Random randomGenerator = new Random();
-        int number = randomGenerator.Next(1,11);
+        DisplayResult(UserNamed, squaredNumber);
+
+    }
+        static void DisplayMessage()
+        {
+            Console.Write("Welcome Player 1");
+        }
+
+        static string UserName()
+        {
+            Console.Write("Please enter your name: ");
+            string name = Console.ReadLine();
+            return name;
+        }
+
+        static int UserNumber()
+        {
+            Console.Write("What is your favorite number? ");
+            int number = int.Parse(Console.ReadLine());
+            return number;
+        }
+
+        static int SquareNumber(int number)
+        {
+            int square = number * number;
+            return square;
+        }
+
+        static void DisplayResult(string name, int square)
+        {
+            Console.Write($"{name}, this is your number squared {square}");
+        }
         // Console.WriteLine("Hello Sandbox World! bruh");
         // Console.WriteLine("What is up goody");
 
@@ -38,5 +72,5 @@ class Program
         //     Console.WriteLine("Bruh non of the above");
         // }
 
-    }
+    
 }
