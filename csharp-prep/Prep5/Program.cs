@@ -9,7 +9,7 @@ class Program
         DisplayMessage();
         string name = AskName("Please enter your name: ");
         int number = AskNumber("Please enter your favorite number: ");
-        EndResult();
+        EndResult(name, number);
 
     }
     //    These are the functions
@@ -18,20 +18,23 @@ class Program
     Console.WriteLine($"Hello World");
     }
     
+// This is the Name function
     static string AskName (string prompt)
     {
         Console.Write(prompt);
         string userInput = Console.ReadLine();
         return userInput;
     }
-
+// This is the Number Function
     static int AskNumber(string prompt)
     {
         Console.Write(prompt);
         string userInput = Console.ReadLine();
         int userNumber = Convert.ToInt32(userInput);
         return userNumber;
+    }
 
+// This is the Solution Function
     static void EndResult(string name, int number)
     {
     int squared =  number * number;
