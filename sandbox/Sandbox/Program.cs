@@ -6,43 +6,39 @@ class Program
 {
     static void Main(string[] args)
     {
-        DisplayMessage();
-        string UserNamed = UserName();
-        int userNumber = UserNumber();
-        int squaredNumber = SquareNumber(userNumber);
-
-        DisplayResult(UserNamed, squaredNumber);
-
+        
     }
-        static void DisplayMessage()
-        {
-            Console.Write("Welcome Player 1");
-        }
 
-        static string UserName()
-        {
-            Console.Write("Please enter your name: ");
-            string name = Console.ReadLine();
-            return name;
-        }
+    
+        // static void DisplayMessage()
+        // {
+        //     Console.Write("Welcome Player 1");
+        // }
 
-        static int UserNumber()
-        {
-            Console.Write("What is your favorite number? ");
-            int number = int.Parse(Console.ReadLine());
-            return number;
-        }
+        // static string UserName()
+        // {
+        //     Console.Write("Please enter your name: ");
+        //     string name = Console.ReadLine();
+        //     return name;
+        // }
 
-        static int SquareNumber(int number)
-        {
-            int square = number * number;
-            return square;
-        }
+        // static int UserNumber()
+        // {
+        //     Console.Write("What is your favorite number? ");
+        //     int number = int.Parse(Console.ReadLine());
+        //     return number;
+        // }
 
-        static void DisplayResult(string name, int square)
-        {
-            Console.Write($"{name}, this is your number squared {square}");
-        }
+        // static int SquareNumber(int number)
+        // {
+        //     int square = number * number;
+        //     return square;
+        // }
+
+        // static void DisplayResult(string name, int square)
+        // {
+        //     Console.Write($"{name}, this is your number squared {square}");
+        // }
         // Console.WriteLine("Hello Sandbox World! bruh");
         // Console.WriteLine("What is up goody");
 
