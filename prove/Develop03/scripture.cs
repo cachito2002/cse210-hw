@@ -13,14 +13,28 @@ public class Scripture
 
     public void HideRandomWords(int numberToHide)
     {
-        var visibleWords = _words.Where(w => !w.IsHidden()).ToList();
-        int wordsToHide = Math.Min(numberToHide, visibleWords.Count);
-        
+        // Get indices of all visible words
+        var visibleIndices = new List<int>();
+        for (int i = 0; i < _words.Count; i++)
+        {
+            if (!_words[i].IsHidden())
+            {
+                visibleIndices.Add(i);
+            }
+        }
+
+        // If no visible words remain, return
+        if (visibleIndices.Count == 0) return;
+
+        // Determine how many words to hide
+        int wordsToHide = Math.Min(numberToHide, visibleIndices.Count);
+
+        // Randomly select and hide words
         for (int i = 0; i < wordsToHide; i++)
         {
-            int randomIndex = _random.Next(visibleWords.Count);
-            visibleWords[randomIndex].Hide();
-            visibleWords.RemoveAt(randomIndex);
+            int randomIndex = _random.Next(visibleIndices.Count);
+            _words[visibleIndices[randomIndex]].Hide();
+            visibleIndices.RemoveAt(randomIndex);
         }
     }
 

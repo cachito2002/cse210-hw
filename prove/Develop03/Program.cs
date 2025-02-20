@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        // This is the creative part: a list of random scriptures
+        // The program will get it from this list
         List<Scripture> scriptures = new List<Scripture>
         {
             new Scripture(
@@ -22,12 +24,11 @@ class Program
 
         };
 
-        Random random = new Random();
+      Random random = new Random();
         bool keepPlaying = true;
 
         while (keepPlaying)
         {
-            // Get a random scripture
             Scripture scripture = scriptures[random.Next(scriptures.Count)];
             
             string input = "";
@@ -37,21 +38,32 @@ class Program
                 Console.WriteLine(scripture.GetDisplayText());
                 Console.WriteLine("\nPress enter to continue or type 'quit' to finish:");
                 Console.WriteLine("Type 'next' for a different scripture:");
+                
                 input = Console.ReadLine();
 
                 if (input.ToLower() == "next")
                 {
                     break;
                 }
-                else if (input.ToLower() != "quit")
+                else if (input.ToLower() == "quit")
+                {
+                    keepPlaying = false;
+                    break;
+                }
+                else
                 {
                     scripture.HideRandomWords(3);
+                    
+                    // If all words are hidden after this round, end the program
+                    if (scripture.IsCompletelyHidden())
+                    {
+                        Console.Clear();
+                        Console.WriteLine(scripture.GetDisplayText());
+                        Console.WriteLine("\nAll words are now hidden.");
+                        keepPlaying = false;
+                        break;
+                    }
                 }
-            }
-
-            if (input.ToLower() == "quit")
-            {
-                keepPlaying = false;
             }
         }
     }
