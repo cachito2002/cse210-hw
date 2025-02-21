@@ -1,15 +1,73 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using System.Collections.Generic;
+using System.Threading;
 
 class Program
 {
     static void Main(string[] args)
     {
+        Student student = new Student("Brigham", "21");
+        string name = student.GetName();
+        string number = student.GetNumber();
+
+        Console.WriteLine("Enter the animation duration in seconds: ");
+        if (!int.TryParse(Console.ReadLine(), out int duration) || duration <= 0) 
+        {
+            
+            Console.WriteLine("Invalid input. Exiting program.");
+            duration = 10;
+        }
+
+
+
+        // |/-\|/-\
+        List<string> animationStrings = new List<string>();
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-"); 
+        animationStrings.Add("\\");
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+        
+
+        // foreach (string s in animationStrings)
+        // {
+        //     Console.WriteLine(s);
+        //     Thread.Sleep(1000);
+        //     Console.Write("\b \b");
+        // }
+
+
+        int i = 0;
+
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(duration);
+        while (DateTime.Now < endTime)
+        {
+            string s = animationStrings[i];
+            Console.Write(s);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+            
+            i++;
+            if (i >= animationStrings.Count)
+            {
+                i = 0;
+            }
+
+        }
         
     }
 
+}
     
+        // Thread.Sleep(1000);
+        // Console.WriteLine(name);
+        // Console.WriteLine(number);
         // static void DisplayMessage()
         // {
         //     Console.Write("Welcome Player 1");
@@ -69,4 +127,3 @@ class Program
         // }
 
     
-}
