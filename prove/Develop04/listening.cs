@@ -26,10 +26,10 @@ public class ListingExercise : BaseActivity
         Random random = new Random();
         string prompt = _prompts[random.Next(_prompts.Count)];
 
-        Console.WriteLine("List as many responses as you can to the following prompt:");
+        Console.WriteLine("List as many responses as you can to the following prompt: ");
         Console.WriteLine();
         Console.WriteLine(prompt);
-        Console.Write("you may begin in:");
+        Console.Write("you may begin in: ");
         ShowCountDown(5);
         Console.WriteLine();
 

@@ -34,7 +34,7 @@ public class ReflectionExercise : BaseActivity
         Random random = new Random();
         string prompt = _prompts[random.Next(_prompts.Count)];
 
-        Console.WriteLine("Reflect on the following prompt:");
+        Console.WriteLine("Reflect on the following prompt: ");
         Console.WriteLine();
         Console.WriteLine(prompt);
         Console.WriteLine();
@@ -43,7 +43,7 @@ public class ReflectionExercise : BaseActivity
 
         Console.WriteLine("Now ponder on each of the following questions");
         Console.Write("You may begin in: ");
-        ShowCountDown(5);
+        ShowCountDown(3);
         Console.Clear();
 
         DateTime startTime = DateTime.Now;
@@ -54,7 +54,7 @@ public class ReflectionExercise : BaseActivity
         while (DateTime.Now < endTime)
         {
             Console.WriteLine(_questions[questionIndex %_questions.Count]);
-            ShowAnimation(10);
+            ShowAnimation(5);
             Console.WriteLine();
             questionIndex++;
         }
