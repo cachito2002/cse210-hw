@@ -5,6 +5,7 @@ public class BaseActivity
     private string _activityName;
     private string _description;
     private int _duration;
+    private static ActivityTracker _tracker = new ActivityTracker();
 
 
     public BaseActivity(string activityName, string description)
@@ -31,6 +32,11 @@ public class BaseActivity
     public void SetDuration(int duration)
         {
             _duration = duration;
+        }
+        // added a tracker to the activity so you can see it how many times you have done an activity
+    public static ActivityTracker GetTracker()
+        {
+            return _tracker;
         }
 
     public void DisplayStartingMessage()
@@ -64,6 +70,8 @@ public class BaseActivity
             Console.WriteLine();
             Console.WriteLine($"You have completed another {_duration} second of the {_activityName}");
             ShowAnimation(5);
+
+            _tracker.RecordActivity(_activityName);
         }
 
     public void ShowAnimation(int seconds)

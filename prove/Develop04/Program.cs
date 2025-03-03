@@ -14,8 +14,22 @@ class Program
             Console.WriteLine("1. Breathing Exercise");
             Console.WriteLine("2. Reflection Exercise");
             Console.WriteLine("3. Listening Exercise");
+            Console.WriteLine("4. View Activity Statistics");
             Console.WriteLine("4. Exit");
             Console.WriteLine("\nSelect a choice from the menu: ");
+
+            if (BaseActivity.GetTracker().GetActivityCounts().Count > 0)
+            {
+                Console.WriteLine("\n---Activity Statistics ---");
+                int totalActivities = 0;
+                foreach (var activity in BaseActivity.GetTracker().GetActivityCounts())
+                {
+                    Console.WriteLine($"{activity.Key}: {activity.Value} time{(activity.Value != 1 ? "s" : "")}");
+                    totalActivities += activity.Value;
+
+                }
+
+            }
 
             string choice = Console.ReadLine();
             
@@ -33,7 +47,16 @@ class Program
                     ListingExercise listing = new ListingExercise();
                     listing.Run();
                     break;
+                    // shows you the list of activities you have done and how many you did
+                    // there is also a class made for this to track everything
                 case "4":
+                    Console.Clear();
+                    BaseActivity.GetTracker().DisplayStatistics();
+                    Console.WriteLine("\nPress any key to continue...");
+                    Console.ReadKey();
+                    break;
+
+                case "5":
                     running = false;
                     Console.WriteLine("Have an amazing day you are doing amazing! God is with you, he will always be with you!");
                     break;
