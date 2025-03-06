@@ -15,7 +15,7 @@ class Program
             Console.WriteLine("2. Reflection Exercise");
             Console.WriteLine("3. Listening Exercise");
             Console.WriteLine("4. View Activity Statistics");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("5. Exit");
             Console.WriteLine("\nSelect a choice from the menu: ");
 
             if (BaseActivity.GetTracker().GetActivityCounts().Count > 0)
