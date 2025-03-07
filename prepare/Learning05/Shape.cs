@@ -1,9 +1,9 @@
 using System;
-using System.Collections.Generic;
 
-public class Shape
+
+public abstract class Shape
 {
-    protected string _color;
+    private string _color;
 
     public Shape(string color)
     {
@@ -20,10 +20,7 @@ public class Shape
         _color = color;
     }
 
-    public virtual float GetArea()
-    {
-        return 0.0f;
-    }
+    public abstract double GetArea();
     
 }
 

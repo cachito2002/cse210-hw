@@ -13,6 +13,9 @@ class Program
         shapes.Add(new Square("Orange", 8));
         shapes.Add(new Circle("Black", 6));
 
+        Rectangle s1 = new Rectangle("Purple", 10, 20);
+        shapes.Add(s1);
+
         foreach (Shape shape in shapes)
         {
             Console.WriteLine("Shape Color: " + shape.GetColor()); 

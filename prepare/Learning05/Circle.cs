@@ -3,25 +3,15 @@ using System;
 public class Circle : Shape
 {
 
-    private float _radius;
+    private double _radius;
 
-    public Circle(string color, float radius) : base(color)
+    public Circle(string color, double radius) : base(color)
     {
         _radius = radius;
     }
 
-    public float GetRadius()
+    public override double GetArea()
     {
-        return _radius;
-    }
-
-    public void SetRadius(float radius)
-    {
-        _radius = radius;
-    }
-
-    public override float GetArea()
-    {
-        return (float)Math.PI *_radius * _radius;
+        return _radius * _radius * Math.PI;
     }
 }

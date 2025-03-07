@@ -1,40 +1,23 @@
 using System;
-using System.Collections.Generic;
 
 public class Rectangle : Shape
 {
-    private float _length;
-    private float _width;
+    private double _length;
+    private double _width;
 
-    public Rectangle(string color, float length, float width) : base(color)
+    public Rectangle(string color, double length, double width) : base(color)
     {
         _length = length;
         _width = width;
     }
 
-    public float GetLength()
-    {
-        return _length;
-    }
-    public float GetWidth()
-    {
-        return _width;
-    }
-
-    public void SetLength(float length)
-    {
-        _length = length;
-    }
-
-    public void SetWidth(float width)
+    public void SetWidth(double width)
     {
         _width = width;
     }
 
-    public override float GetArea()
+    public override double GetArea()
     {
         return _length * _width;
     }
-
-    
 }
